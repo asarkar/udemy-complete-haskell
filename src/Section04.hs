@@ -33,6 +33,7 @@ isPrime n
 
 -- Write a function fib :: Int -> Int that returns the n-th
 -- element of the Fibonacci sequence.
+
 fib :: Int -> Int
 fib n
   | n < 2 = n

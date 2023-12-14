@@ -1,3 +1,5 @@
+{-# OPTIONS -Wno-missing-export-lists #-}
+
 module SpecHook where
 
 import Test.Hspec
