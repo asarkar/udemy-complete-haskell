@@ -26,6 +26,7 @@ source-repository head
 library
   exposed-modules:
       Section04
+      Section07
   other-modules:
       Paths_udemy_complete_haskell
   hs-source-dirs:
@@ -40,6 +41,7 @@ test-suite udemy-complete-haskell-test
   main-is: Spec.hs
   other-modules:
       Section04Spec
+      Section07Spec
       SpecHook
       Paths_udemy_complete_haskell
   hs-source-dirs:
