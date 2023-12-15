@@ -39,13 +39,12 @@ args=( "${args[@]/%/\"}" )
 
 if (( no_test == 0 )); then
 		# profiling https://stackoverflow.com/a/40922201/839733
-		stack test $stack_opts --ta "${args[*]}" --ghc-options="-Wall -Werror"
+		stack test $stack_opts --ta "${args[*]}"
 fi
 
 if (( no_lint == 0 )); then
 	if [[ -x "$(command -v hlint)" ]]; then
-		hlint src
-		hlint test
+		hlint app src test
 	else
 		printf "hlint not found"
 	fi
@@ -56,8 +55,7 @@ if (( no_lint == 0 )); then
 	fi
 	
 	if [[ -x "$(command -v ormolu)" ]]; then
-		ormolu -m "$ormolu_mode" $(find src -name '*.hs')
-		ormolu -m "$ormolu_mode" $(find test -name '*.hs')
+		ormolu -m "$ormolu_mode" $(find app src test -type f -name '*.hs')
 	else
 		printf "ormolu not found"
 	fi

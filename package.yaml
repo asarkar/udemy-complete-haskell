@@ -46,6 +46,15 @@ library:
   dependencies:
   - containers
 
+executables:
+  section16-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+
 tests:
   udemy-complete-haskell-test:
     defaults: hspec/hspec@main

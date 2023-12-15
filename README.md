@@ -23,6 +23,17 @@ To run a _specific test_:
 ./.github/run.sh -m "/Ch11/evaluates expression/eval/"
 ```
 
+To run a file containing a `main` method:
+```
+stack runhaskell app/Main.hs
+```
+
+To run an executable listed in `package.yaml`:
+```
+stack build
+stack exec section16-exe
+```
+
 ## License
 
 Released under [Apache License v2.0](LICENSE).
