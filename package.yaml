@@ -39,9 +39,12 @@ ghc-options:
 - -Wno-unsafe
 - -Wno-implicit-prelude  # In most cases, we want Prelude implicitly imported.
 - -Wno-prepositive-qualified-module
+- -Wno-missing-kind-signatures
 
 library:
   source-dirs: src
+  dependencies:
+  - containers
 
 tests:
   udemy-complete-haskell-test:
