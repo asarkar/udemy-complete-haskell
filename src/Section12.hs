@@ -1,8 +1,5 @@
-{-# LANGUAGE DerivingStrategies #-}
-
 module Section12
-  ( Tree (..),
-    size,
+  ( size,
     height,
     equal,
     isomorphic,
@@ -16,8 +13,7 @@ where
 
 import qualified Data.Foldable as F
 import qualified Data.Sequence as S
-
-data Tree a = Node a (Tree a) (Tree a) | Empty deriving stock (Show)
+import Tree (Tree (..))
 
 -- Write a function size :: Tree a -> Int that, given a tree,
 -- returns its size, that is, the number of nodes it contains.
@@ -93,7 +89,7 @@ breadthFirst root = reverse $ bfs (S.singleton root) []
       _ -> visited
 
 breadthFirst' :: Tree a -> [a]
-breadthFirst' = bfs . (: [])
+breadthFirst' = bfs . pure
   where
     bfs :: [Tree a] -> [a]
     bfs [] = []

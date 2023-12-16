@@ -32,6 +32,8 @@ library
       Section12
       Section14
       Section16
+      Section23
+      Tree
   other-modules:
       Paths_udemy_complete_haskell
   hs-source-dirs:
@@ -64,7 +66,9 @@ test-suite udemy-complete-haskell-test
       Section12Spec
       Section14Spec
       Section16Spec
+      Section23Spec
       SpecHook
+      TreeSpec
       Paths_udemy_complete_haskell
   hs-source-dirs:
       test

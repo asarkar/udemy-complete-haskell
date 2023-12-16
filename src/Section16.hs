@@ -1,5 +1,3 @@
-{-# LANGUAGE DerivingStrategies #-}
-
 module Section16 (acyclicPaths) where
 
 import Data.Map (Map)

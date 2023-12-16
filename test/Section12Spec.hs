@@ -1,10 +1,7 @@
-{-# OPTIONS_GHC -Wno-unused-top-binds #-}
-
 module Section12Spec (spec) where
 
 import Section12
-  ( Tree (..),
-    breadthFirst,
+  ( breadthFirst,
     breadthFirst',
     equal,
     height,
@@ -15,32 +12,13 @@ import Section12
     size,
   )
 import Test.Hspec
-
-draw :: Tree Int -> [String]
-draw Empty = []
-draw (Node x l r) = show x : drawSubTrees [l, r]
-  where
-    drawSubTrees [] = []
-    drawSubTrees [Empty] = []
-    drawSubTrees [t] =
-      "|" : shift "`- " "   " (draw t)
-    drawSubTrees (Empty : ts) = drawSubTrees ts
-    drawSubTrees (t : ts) =
-      "|" : shift "+- " "|  " (draw t) ++ drawSubTrees ts
-
-    shift first other = zipWith (++) (first : repeat other)
-
-drawTree :: Tree Int -> String
-drawTree = unlines . draw
-
-leaf :: Int -> Tree Int
-leaf x = Node x Empty Empty
+import Tree (Tree (..), fromList)
 
 t1 :: Tree Int
-t1 = Node 5 (Node 3 (Node 2 (leaf 1) Empty) (leaf 4)) (leaf 6)
+t1 = fromList read ["5", "3", "6", "2", "4", "null", "null", "1"]
 
 t2 :: Tree Int
-t2 = Node 1 (Node 2 (leaf 4) (leaf 5)) (Node 3 (leaf 6) (leaf 7))
+t2 = fromList read ["1", "2", "3", "4", "5", "6", "7"]
 
 spec :: Spec
 spec = do
@@ -67,7 +45,7 @@ spec = do
       isomorphic (Empty :: Tree Int) Empty `shouldBe` True
       isomorphic Empty t1 `shouldBe` False
       isomorphic t1 Empty `shouldBe` False
-      let t3 = Node 5 (leaf 6) (Node 3 (leaf 4) (Node 2 Empty (leaf 1)))
+      let t3 = fromList read ["5", "6", "3", "null", "null", "4", "2", "null", "null", "null", "1"]
       isomorphic t1 t3 `shouldBe` True
       isomorphic t1 t2 `shouldBe` False
 
