@@ -44,7 +44,7 @@ fi
 
 if (( no_lint == 0 )); then
 	if [[ -x "$(command -v hlint)" ]]; then
-		hlint app src test
+		hlint .
 	else
 		printf "hlint not found"
 	fi
@@ -55,7 +55,7 @@ if (( no_lint == 0 )); then
 	fi
 	
 	if [[ -x "$(command -v ormolu)" ]]; then
-		ormolu -m "$ormolu_mode" $(find app src test -type f -name '*.hs')
+		ormolu -m "$ormolu_mode" $(find . -type f -name '*.hs')
 	else
 		printf "ormolu not found"
 	fi
