@@ -10,31 +10,31 @@ Section 2: Basic Types
 
 Section 3: Functions
 
-Section 4: Solved Problems - Functions
+Section 4: [Solved Problems - Functions](src/Section04.hs)
 
 Section 5: Tuples
 
 Section 6: Lists
 
-Section 7: Solved Problems - Lists
+Section 7: [Solved Problems - Lists](src/Section07.hs)
 
 Section 8: Higher Order Functions
 
-Section 9: Solved Problems - Higher Order Functions
+Section 9: [Solved Problems - Higher Order Functions](src/Section09.hs)
 
-Section 10: Solved Problems - Infinite Lists
+Section 10: [Solved Problems - Infinite Lists](src/Section10.hs)
 
 Section 11: Binary Trees
 
-Section 12: Solved Problems - Binary Trees
+Section 12: [Solved Problems - Binary Trees](src/Section12.hs)
 
 Section 13: Multiway Trees
 
-Section 14: Solved Problems - Multiway Trees
+Section 14: [Solved Problems - Multiway Trees](src/Section14.hs)
 
 Section 15: Graphs
 
-Section 16: Solved Problems - Graphs
+Section 16: [Solved Problems - Graphs](src/Section16.hs)
 
 Section 17: Advanced Types
 
@@ -46,9 +46,9 @@ Section 20: Monads
 
 Section 21: Input and Output
 
-Section 22: Solved Problems - Input and Output
+Section 22: [Solved Problems - Input and Output](app/Main.hs)
 
-Section 23: Final Exams
+Section 23: [Final Exams](src/Section23.hs)
 
 ## Running tests
 
